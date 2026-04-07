@@ -779,4 +779,36 @@ class RabbitMQQueue extends Queue implements QueueContract, RabbitMQQueueContrac
         // Create a new main channel because all old channels are removed.
         $this->getChannel(true);
     }
+
+    /**
+     * Get the number of pending jobs.
+     */
+    public function pendingSize(?string $queue = null): int
+    {
+        return $this->size($queue);
+    }
+
+    /**
+     * Get the number of delayed jobs.
+     */
+    public function delayedSize(?string $queue = null): int
+    {
+        return 0;
+    }
+
+    /**
+     * Get the number of reserved jobs.
+     */
+    public function reservedSize(?string $queue = null): int
+    {
+        return 0;
+    }
+
+    /**
+     * Get the creation time of the oldest pending job.
+     */
+    public function creationTimeOfOldestPendingJob(?string $queue = null): ?int
+    {
+        return null;
+    }
 }
