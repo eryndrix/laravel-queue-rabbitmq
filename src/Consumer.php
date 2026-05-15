@@ -15,7 +15,7 @@ use VladimirYuldashev\LaravelQueueRabbitMQ\Queue\RabbitMQQueue;
 class Consumer extends Worker
 {
     /** @var Container */
-    protected $container;
+    public $container;
 
     /** @var string */
     protected $consumerTag;
