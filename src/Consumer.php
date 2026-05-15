@@ -15,7 +15,7 @@ use VladimirYuldashev\LaravelQueueRabbitMQ\Queue\RabbitMQQueue;
 class Consumer extends Worker
 {
     /** @var Container */
-    public $container;
+    protected $container;
 
     /** @var string */
     protected $consumerTag;
@@ -32,7 +32,7 @@ class Consumer extends Worker
     /** @var AMQPChannel */
     protected $channel;
 
-    protected $currentJob;
+    public $currentJob;
 
     public function setContainer(Container $value): void
     {
