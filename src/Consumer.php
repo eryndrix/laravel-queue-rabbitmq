@@ -199,7 +199,7 @@ class Consumer extends Worker
      * @param  string|null  $reason
      * @return int
      */
-    public function stop($status = 0, $options = null, $reason = null)
+    public function stop($status = 0, $options = null, $reason = null, $connectionName = null, $queue = null)
     {
         // Tell the server you are going to stop consuming.
         // It will finish up the last message and not send you any more.
